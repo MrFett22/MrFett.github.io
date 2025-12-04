@@ -1,449 +1,214 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <title>CV – Diego Roberto Muñoz González</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8">
+  <title>Sobre mí – Diego Muñoz</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <style>
-        :root {
-            --bg: #0f172a;
-            --bg-soft: #111827;
-            --card: #020617;
-            --accent: #38bdf8;
-            --accent-soft: rgba(56,189,248,0.12);
-            --text: #e5e7eb;
-            --muted: #9ca3af;
-        }
+  <style>
+    :root {
+      --bg: #020617;
+      --bg-soft: #0b1220;
+      --card: #020617;
+      --accent: #38bdf8;
+      --accent-soft: rgba(56,189,248,0.12);
+      --text: #e5e7eb;
+      --muted: #9ca3af;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top, #1f2937 0, #020617 55%);
+      color: var(--text);
+    }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
 
-        * {
-            box-sizing: border-box;
-        }
+    .page {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 24px 16px 64px;
+    }
 
-        body {
-            margin: 0;
-            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-            background: radial-gradient(circle at top, #1f2937 0, #020617 55%);
-            color: var(--text);
-        }
+    /* NAV */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(15,23,42,0.92);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(148,163,184,0.25);
+      margin: 0 -16px 24px;
+      padding: 10px 16px;
+    }
+    nav .nav-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+    .brand {
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      font-size: 0.85rem;
+    }
+    .nav-links a {
+      padding: 4px 10px;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      color: var(--muted);
+    }
+    .nav-links a:hover {
+      border-color: rgba(148,163,184,0.7);
+      color: var(--text);
+    }
+    .nav-links .active {
+      background: var(--accent-soft);
+      color: var(--accent);
+      border-color: rgba(56,189,248,0.6);
+    }
 
-        a {
-            color: var(--accent);
-            text-decoration: none;
-        }
+    /* LAYOUT */
+    header {
+      display: grid;
+      grid-template-columns: minmax(0, 2.3fr) minmax(0, 1.7fr);
+      gap: 18px;
+      align-items: center;
+      margin-bottom: 24px;
+    }
+    @media (max-width: 720px) {
+      header { grid-template-columns: minmax(0,1fr); }
+    }
 
-        a:hover {
-            text-decoration: underline;
-        }
+    .card {
+      background: linear-gradient(145deg,#020617,#020617,#020617);
+      border-radius: 18px;
+      padding: 20px 22px;
+      border: 1px solid rgba(148,163,184,0.25);
+      box-shadow: 0 18px 45px rgba(15,23,42,0.9);
+    }
 
-        .page {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 24px 16px 72px;
-        }
+    .hero h1 {
+      margin: 0 0 4px;
+      font-size: clamp(1.9rem, 3vw, 2.3rem);
+    }
+    .hero p {
+      margin: 4px 0 10px;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 6px;
+    }
+    .chip {
+      font-size: 0.75rem;
+      border-radius: 999px;
+      padding: 4px 10px;
+      background: var(--accent-soft);
+      border: 1px solid rgba(148,163,184,0.4);
+      color: var(--accent);
+    }
+    .contact p {
+      margin: 2px 0;
+      font-size: 0.86rem;
+    }
 
-        header {
-            display: flex;
-            flex-direction: column;
-            gap: 16px;
-            margin-bottom: 24px;
-        }
+    h2 {
+      margin: 0 0 10px;
+      font-size: 0.95rem;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .section {
+      margin-bottom: 18px;
+    }
+    .section p {
+      font-size: 0.9rem;
+      line-height: 1.55;
+      color: #d1d5db;
+      margin: 0;
+    }
 
-        @media (min-width: 720px) {
-            header {
-                flex-direction: row;
-                justify-content: space-between;
-                align-items: center;
-            }
-        }
-
-        .title-block h1 {
-            margin: 0 0 4px;
-            font-size: clamp(1.9rem, 3vw, 2.3rem);
-        }
-
-        .subtitle {
-            margin: 0;
-            color: var(--muted);
-            font-size: 0.95rem;
-        }
-
-        .tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 6px;
-            margin-top: 6px;
-        }
-
-        .tag {
-            font-size: 0.75rem;
-            border-radius: 999px;
-            padding: 4px 10px;
-            background: var(--accent-soft);
-            color: var(--accent);
-            border: 1px solid rgba(148,163,184,0.3);
-        }
-
-        .contact {
-            font-size: 0.85rem;
-            text-align: left;
-        }
-
-        .contact p {
-            margin: 2px 0;
-        }
-
-        @media (min-width: 720px) {
-            .contact {
-                text-align: right;
-            }
-        }
-
-        nav {
-            position: sticky;
-            top: 0;
-            background: linear-gradient(to bottom, rgba(15,23,42,0.95), rgba(15,23,42,0.8));
-            backdrop-filter: blur(10px);
-            z-index: 10;
-            margin: 0 -16px 16px;
-            padding: 8px 16px;
-            border-bottom: 1px solid rgba(148,163,184,0.2);
-        }
-
-        nav ul {
-            margin: 0 auto;
-            padding: 0;
-            max-width: 1000px;
-            display: flex;
-            list-style: none;
-            gap: 12px;
-            overflow-x: auto;
-            scrollbar-width: none;
-        }
-
-        nav ul::-webkit-scrollbar { display: none; }
-
-        nav a {
-            font-size: 0.85rem;
-            padding: 4px 10px;
-            border-radius: 999px;
-            border: 1px solid transparent;
-        }
-
-        nav a:hover {
-            border-color: rgba(148,163,184,0.6);
-            background: rgba(15,23,42,0.8);
-        }
-
-        .grid {
-            display: grid;
-            grid-template-columns: minmax(0, 3fr);
-            gap: 18px;
-        }
-
-        @media (min-width: 880px) {
-            .grid {
-                grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
-            }
-        }
-
-        .section {
-            margin-bottom: 18px;
-        }
-
-        .card {
-            background: linear-gradient(135deg, rgba(15,23,42,0.95), rgba(15,23,42,0.96));
-            border-radius: 14px;
-            padding: 16px 18px;
-            border: 1px solid rgba(148,163,184,0.25);
-            box-shadow: 0 18px 45px rgba(15,23,42,0.8);
-        }
-
-        h2 {
-            margin: 0 0 10px;
-            font-size: 1rem;
-            letter-spacing: 0.04em;
-            text-transform: uppercase;
-            color: var(--muted);
-        }
-
-        .item {
-            margin-bottom: 12px;
-        }
-        .item:last-child { margin-bottom: 0; }
-
-        .item-title {
-            display: flex;
-            justify-content: space-between;
-            gap: 12px;
-            font-size: 0.93rem;
-        }
-
-        .item-title strong {
-            font-weight: 600;
-        }
-
-        .item-meta {
-            font-size: 0.8rem;
-            color: var(--muted);
-            margin: 2px 0 4px;
-        }
-
-        .item-desc {
-            font-size: 0.85rem;
-            color: #d1d5db;
-        }
-
-        ul.compact {
-            padding-left: 18px;
-            margin: 4px 0 0;
-            font-size: 0.83rem;
-        }
-
-        ul.compact li {
-            margin-bottom: 3px;
-        }
-
-        .chips {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 6px;
-            margin-top: 6px;
-        }
-
-        .chip {
-            font-size: 0.75rem;
-            border-radius: 999px;
-            padding: 3px 9px;
-            background: #020617;
-            border: 1px solid rgba(148,163,184,0.4);
-        }
-
-        footer {
-            margin-top: 26px;
-            font-size: 0.75rem;
-            color: var(--muted);
-            text-align: center;
-        }
-    </style>
+    footer {
+      margin-top: 28px;
+      font-size: 0.75rem;
+      color: var(--muted);
+      text-align: center;
+    }
+  </style>
 </head>
-
 <body>
 <div class="page">
 
-    <!-- HEADER -->
-    <header>
-        <div class="title-block">
-            <h1>Diego Roberto Muñoz González</h1>
-            <p class="subtitle">
-                Ciencia de Datos · Analítica Deportiva · Ingeniería de Datos
-            </p>
-            <div class="tags">
-                <span class="tag">Sports Analytics</span>
-                <span class="tag">Machine Learning</span>
-                <span class="tag">Data Engineering</span>
-                <span class="tag">Python · SQL</span>
-            </div>
-        </div>
+  <!-- NAV -->
+  <nav>
+    <div class="nav-inner">
+      <div class="brand">Diego Muñoz · Data & Sports Analytics</div>
+      <div class="nav-links">
+        <a href="index.html" class="active">Sobre mí</a>
+        <a href="experiencia.html">Experiencia</a>
+        <a href="proyectos.html">Proyectos</a>
+        <a href="perfil.html">Perfil técnico</a>
+      </div>
+    </div>
+  </nav>
 
-        <div class="contact">
-            <!-- TODO: reemplaza con tus datos reales -->
-            <p>📍 Ciudad de México, México</p>
-            <p>✉️ <a href="mailto:tuemail@example.com">tuemail@example.com</a></p>
-            <p>💼 <a href="https://www.linkedin.com/in/tuusuario" target="_blank" rel="noopener">linkedin.com/in/tuusuario</a></p>
-            <p>🐙 <a href="https://github.com/MrFett22" target="_blank" rel="noopener">github.com/MrFett22</a></p>
-        </div>
-    </header>
-
-    <!-- NAV -->
-    <nav>
-        <ul>
-            <li><a href="#sobre-mi">Sobre mí</a></li>
-            <li><a href="#experiencia">Experiencia</a></li>
-            <li><a href="#proyectos">Proyectos</a></li>
-            <li><a href="#habilidades">Habilidades</a></li>
-            <li><a href="#educacion">Educación</a></li>
-            <li><a href="#extra">Cursos & otros</a></li>
-        </ul>
-    </nav>
-
-    <div class="grid">
-        <!-- COLUMNA IZQUIERDA -->
-        <main>
-
-            <section id="sobre-mi" class="section card">
-                <h2>Sobre mí</h2>
-                <p style="font-size:0.9rem; line-height:1.5;">
-                    Estudiante de Ciencia de Datos en el ITAM con enfoque en analítica deportiva y 
-                    construcción de pipelines de datos de principio a fin. Me gusta combinar 
-                    estadística, modelos de machine learning y visualización para convertir datos 
-                    en decisiones accionables, especialmente en fútbol y deportes profesionales.
-                </p>
-            </section>
-
-            <section id="experiencia" class="section card">
-                <h2>Experiencia</h2>
-
-                <div class="item">
-                    <div class="item-title">
-                        <strong>Sports Data Analyst (proyectos académicos)</strong>
-                        <span>2023 – actual</span>
-                    </div>
-                    <div class="item-meta">Proyectos de analítica deportiva · ITAM</div>
-                    <div class="item-desc">
-                        <ul class="compact">
-                            <li>Diseño de modelos de paridad competitiva para la UEFA Champions League usando Elo y simulaciones Monte Carlo.</li>
-                            <li>Construcción de pipelines con StatsBombPy para analizar tiros de esquina, xG y patrones tácticos.</li>
-                            <li>Implementación de modelos de clasificación y regresión para análisis de rendimiento de equipos y jugadores.</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="item">
-                    <div class="item-title">
-                        <strong>Proyectos de Ingeniería de Datos</strong>
-                        <span>2023 – actual</span>
-                    </div>
-                    <div class="item-meta">Cursos de Fuentes de Datos & proyectos personales</div>
-                    <div class="item-desc">
-                        <ul class="compact">
-                            <li>Desarrollo de ETLs para transformar datos JSON y CSV a esquemas relacionales en PostgreSQL.</li>
-                            <li>Uso de Docker, entornos virtuales y GitHub para garantizar reproducibilidad de pipelines.</li>
-                            <li>Optimización de consultas SQL y scripts de Python para reducir tiempos de cómputo y uso de memoria.</li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
-
-            <section id="proyectos" class="section card">
-                <h2>Proyectos Destacados</h2>
-
-                <div class="item">
-                    <div class="item-title">
-                        <strong>Paridad en la UEFA Champions League</strong>
-                        <span>Elo · Simulaciones</span>
-                    </div>
-                    <div class="item-meta">Índices de Gini · Simulación de formatos de competencia</div>
-                    <p class="item-desc">
-                        Proyecto que modela el balance competitivo de la Champions usando Elo, 
-                        simulaciones de temporadas completas y métricas de desigualdad para 
-                        comparar formatos de liguilla vs. liga.
-                    </p>
-                    <div class="chips">
-                        <span class="chip">Python</span>
-                        <span class="chip">Pandas</span>
-                        <span class="chip">Simulación</span>
-                        <span class="chip">Visualización</span>
-                    </div>
-                </div>
-
-                <div class="item">
-                    <div class="item-title">
-                        <strong>Pipeline StatsBomb para tiros de esquina</strong>
-                        <span>Liga MX</span>
-                    </div>
-                    <p class="item-desc">
-                        Pipeline que extrae eventos de StatsBomb, genera tablas limpias, 
-                        calcula métricas avanzadas (xG, presión, segundos desde el cobro) 
-                        y produce gráficos tácticos para scouting.
-                    </p>
-                    <div class="chips">
-                        <span class="chip">StatsBombPy</span>
-                        <span class="chip">ETL</span>
-                        <span class="chip">mplsoccer</span>
-                    </div>
-                </div>
-
-                <div class="item">
-                    <div class="item-title">
-                        <strong>Optimización de ubicación de farmacias</strong>
-                        <span>Proyecto académico</span>
-                    </div>
-                    <p class="item-desc">
-                        Análisis de datos geoespaciales y de demanda para evaluar ubicación 
-                        óptima de sucursales, apoyando decisiones de expansión.
-                    </p>
-                    <div class="chips">
-                        <span class="chip">Python</span>
-                        <span class="chip">Modelos de demanda</span>
-                        <span class="chip">Geodatos</span>
-                    </div>
-                </div>
-            </section>
-
-        </main>
-
-        <!-- COLUMNA DERECHA -->
-        <aside>
-
-            <section id="habilidades" class="section card">
-                <h2>Habilidades Técnicas</h2>
-                <div class="item">
-                    <strong>Lenguajes</strong>
-                    <ul class="compact">
-                        <li>Python (Pandas, NumPy, scikit-learn, StatsBombPy, mplsoccer)</li>
-                        <li>SQL (PostgreSQL, consultas analíticas)</li>
-                    </ul>
-                </div>
-                <div class="item">
-                    <strong>Data & ML</strong>
-                    <ul class="compact">
-                        <li>ETL & Pipelines de datos</li>
-                        <li>EDA, visualización de datos</li>
-                        <li>Modelos supervisados básicos (clasificación, regresión)</li>
-                    </ul>
-                </div>
-                <div class="item">
-                    <strong>Herramientas</strong>
-                    <ul class="compact">
-                        <li>Git & GitHub, GitHub Pages</li>
-                        <li>Docker y entornos virtuales</li>
-                        <li>Jupyter, VSCode</li>
-                    </ul>
-                </div>
-            </section>
-
-            <section id="educacion" class="section card">
-                <h2>Educación</h2>
-                <div class="item">
-                    <div class="item-title">
-                        <strong>Licenciatura en Ciencia de Datos</strong>
-                        <span>ITAM</span>
-                    </div>
-                    <div class="item-meta">[Año de inicio] – actual</div>
-                    <p class="item-desc">
-                        Cursos relevantes: Fuentes de Datos, Estadística Matemática, 
-                        Arquitectura de Computadoras, Marketing Deportivo basado en Datos, 
-                        Diseño de Mercados.
-                    </p>
-                </div>
-            </section>
-
-            <section id="extra" class="section card">
-                <h2>Cursos, idiomas & otros</h2>
-                <div class="item">
-                    <strong>Idiomas</strong>
-                    <ul class="compact">
-                        <li>Español – nativo</li>
-                        <li>Inglés – [nivel aproximado, por ejemplo B2/C1]</li>
-                    </ul>
-                </div>
-                <div class="item">
-                    <strong>Intereses</strong>
-                    <ul class="compact">
-                        <li>Fútbol, NFL y analítica avanzada de deportes.</li>
-                        <li>Modelos de predicción y simulación de torneos.</li>
-                        <li>Visualización de datos y storytelling con datos.</li>
-                    </ul>
-                </div>
-            </section>
-
-        </aside>
+  <!-- HEADER -->
+  <header>
+    <div class="card hero">
+      <h1>Diego Roberto Muñoz González</h1>
+      <p>
+        Estudiante de Ciencia de Datos en el ITAM enfocado en analítica deportiva,
+        construcción de pipelines y modelos de machine learning para convertir datos en
+        decisiones accionables.
+      </p>
+      <div class="chips">
+        <span class="chip">Sports Analytics</span>
+        <span class="chip">Machine Learning</span>
+        <span class="chip">Data Engineering</span>
+        <span class="chip">Python · SQL</span>
+      </div>
     </div>
 
-    <footer>
-        Última actualización: <!-- TODO: pon fecha si quieres --> 2025.
-    </footer>
+    <div class="card contact">
+      <h2>Contacto</h2>
+      <p>📍 Ciudad de México, México</p>
+      <p>✉️ <a href="mailto:tuemail@example.com">tuemail@example.com</a></p>
+      <p>💼 <a href="https://www.linkedin.com/in/tuusuario" target="_blank" rel="noopener">linkedin.com/in/tuusuario</a></p>
+      <p>🐙 <a href="https://github.com/MrFett22" target="_blank" rel="noopener">github.com/MrFett22</a></p>
+    </div>
+  </header>
+
+  <!-- SOBRE MÍ -->
+  <section class="section card">
+    <h2>Sobre mí</h2>
+    <p>
+      Me interesa entender el juego más allá del marcador: modelo competiciones como la
+      UEFA Champions League usando Elo y simulaciones, analizo tiros de esquina con datos
+      de StatsBomb y diseño pipelines reproducibles en Python.
+      <br><br>
+      Disfruto trabajar con datos desde la extracción (APIs, archivos, bases de datos)
+      hasta la visualización, documentando el proceso con buenas prácticas de Git y
+      entornos aislados. Mi meta es dedicarme a proyectos donde se combinen deporte,
+      estadística y toma de decisiones.
+    </p>
+  </section>
+
+  <footer>
+    Portafolio en desarrollo · actualizado desde GitHub Pages.
+  </footer>
 
 </div>
 </body>
