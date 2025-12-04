@@ -4,28 +4,50 @@
   <meta charset="UTF-8">
   <title>Experiencia – Diego Muñoz</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- mismo estilo que index -->
+
   <style>
-    :root { --bg:#020617;--bg-soft:#0b1220;--card:#020617;--accent:#38bdf8;
-      --accent-soft:rgba(56,189,248,0.12);--text:#e5e7eb;--muted:#9ca3af;}
+    :root{--bg:#020617;--card:#020617;--accent:#38bdf8;--accent-soft:rgba(56,189,248,0.12);--text:#e5e7eb;--muted:#9ca3af;}
     *{box-sizing:border-box;}
-    body{margin:0;font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
-      background:radial-gradient(circle at top,#1f2937 0,#020617 55%);color:var(--text);}
+    body{
+      margin:0;font-family:system-ui,-apple-system,"Segoe UI",sans-serif;
+      background:radial-gradient(circle at top,#0b1120 0,#020617 55%);
+      color:var(--text);
+    }
     a{color:var(--accent);text-decoration:none;}a:hover{text-decoration:underline;}
     .page{max-width:960px;margin:0 auto;padding:24px 16px 64px;}
-    nav{position:sticky;top:0;z-index:10;background:rgba(15,23,42,0.92);backdrop-filter:blur(10px);
-      border-bottom:1px solid rgba(148,163,184,0.25);margin:0 -16px 24px;padding:10px 16px;}
-    nav .nav-inner{max-width:960px;margin:0 auto;display:flex;align-items:center;
-      justify-content:space-between;gap:12px;}
+    nav{
+      position:sticky;top:0;z-index:10;background:rgba(15,23,42,0.95);
+      backdrop-filter:blur(10px);border-bottom:1px solid rgba(148,163,184,0.25);
+      margin:0 -16px 24px;padding:10px 16px;
+    }
+    nav .nav-inner{
+      max-width:960px;margin:0 auto;display:flex;align-items:center;
+      justify-content:space-between;gap:12px;
+    }
     .brand{font-weight:600;font-size:0.95rem;}
     .nav-links{display:flex;flex-wrap:wrap;gap:8px;font-size:0.85rem;}
-    .nav-links a{padding:4px 10px;border-radius:999px;border:1px solid transparent;color:var(--muted);}
+    .nav-links a{
+      padding:4px 10px;border-radius:999px;border:1px solid transparent;color:var(--muted);
+    }
     .nav-links a:hover{border-color:rgba(148,163,184,0.7);color:var(--text);}
-    .nav-links .active{background:var(--accent-soft);color:var(--accent);
-      border-color:rgba(56,189,248,0.6);}
-    .card{background:linear-gradient(145deg,#020617,#020617,#020617);border-radius:18px;
-      padding:20px 22px;border:1px solid rgba(148,163,184,0.25);
-      box-shadow:0 18px 45px rgba(15,23,42,0.9);}
+    .nav-links .active{
+      background:var(--accent-soft);color:var(--accent);
+      border-color:rgba(56,189,248,0.6);
+    }
+    .banner{
+      margin-bottom:22px;border-radius:18px;overflow:hidden;
+      border:1px solid rgba(56,189,248,0.35);
+      box-shadow:0 22px 50px rgba(15,23,42,1);
+    }
+    .banner img{
+      width:100%;display:block;object-fit:cover;
+      filter:saturate(1.15) contrast(1.05) brightness(0.95);
+    }
+    .card{
+      background:var(--card);border-radius:18px;padding:20px 22px;
+      border:1px solid rgba(148,163,184,0.25);
+      box-shadow:0 18px 45px rgba(15,23,42,0.9);
+    }
     h1{margin:0 0 6px;font-size:1.6rem;}
     h2{margin:0 0 10px;font-size:0.95rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);}
     .section{margin-bottom:18px;}
@@ -44,7 +66,7 @@
 
   <nav>
     <div class="nav-inner">
-      <div class="brand">Diego Muñoz · Data & Sports Analytics</div>
+      <div class="brand">Diego Muñoz · Sports Data & Analytics</div>
       <div class="nav-links">
         <a href="index.html">Sobre mí</a>
         <a href="experiencia.html" class="active">Experiencia</a>
@@ -54,11 +76,14 @@
     </div>
   </nav>
 
+  <div class="banner">
+    <img src="https://images.unsplash.com/photo-1526232761682-d26e03ac148e?auto=format&fit=crop&w=1400&q=80" alt="Entrenamiento de fútbol con datos">
+  </div>
+
   <section class="section card">
     <h1>Experiencia</h1>
     <p style="font-size:0.9rem;color:#d1d5db;margin-bottom:10px;">
-      Experiencia principalmente en proyectos académicos y personales relacionados con
-      ciencia de datos, deporte y pipelines de información.
+      Experiencia académica y personal enfocada en analítica deportiva y proyectos de ciencia de datos.
     </p>
   </section>
 
@@ -70,12 +95,12 @@
         <strong>Sports Data Analyst (proyectos académicos)</strong>
         <span>2023 – actual</span>
       </div>
-      <div class="item-meta">ITAM · Proyectos de fútbol y otras ligas</div>
+      <div class="item-meta">ITAM · Fútbol europeo y latinoamericano</div>
       <div class="item-desc">
         <ul class="compact">
-          <li>Diseño de modelos de paridad competitiva para la UEFA Champions League usando Elo y simulaciones Monte Carlo.</li>
-          <li>Análisis de tiros de esquina con datos de StatsBomb: xG, presión, tipo de cobro y patrones tácticos.</li>
-          <li>Modelos básicos de clasificación y regresión para evaluar rendimiento de equipos y jugadores.</li>
+          <li>Modelos de paridad competitiva en la UEFA Champions League usando Elo y simulaciones de miles de temporadas.</li>
+          <li>Análisis de tiros de esquina con datos de StatsBomb (xG, tipo de cobro, presión, tiempo desde el cobro).</li>
+          <li>Modelos de clasificación/regresión para evaluar rendimiento ofensivo y defensivo.</li>
         </ul>
       </div>
     </div>
@@ -85,11 +110,11 @@
         <strong>Fantasy & scouting amateur</strong>
         <span>2022 – actual</span>
       </div>
-      <div class="item-meta">NFL & fútbol · proyectos personales</div>
+      <div class="item-meta">NFL & fútbol · Proyectos personales</div>
       <div class="item-desc">
         <ul class="compact">
-          <li>Uso de datos de fantasy y play-by-play para construir rankings personalizados y estrategias de draft.</li>
-          <li>Exploración de métricas avanzadas (targets, rutas, eficiencia) para decisiones de alineación y trades.</li>
+          <li>Construcción de rankings personalizados de jugadores basados en volumen, eficiencia y contexto.</li>
+          <li>Uso de métricas avanzadas (targets, rutas, aDOT, EPA) para decisiones de alineación y trades.</li>
         </ul>
       </div>
     </div>
@@ -106,15 +131,17 @@
       <div class="item-meta">Curso Fuentes de Datos & proyectos personales</div>
       <div class="item-desc">
         <ul class="compact">
-          <li>Extracción de datos en formato JSON/CSV y carga a esquemas relacionales en PostgreSQL.</li>
-          <li>Uso de Docker, entornos virtuales y GitHub para reproducibilidad.</li>
-          <li>Optimización de scripts de Python y consultas SQL para reducir tiempos de cómputo.</li>
+          <li>Extracción de datos en JSON y CSV (StatsBomb, APIs deportivas) y carga a esquemas relacionales en PostgreSQL.</li>
+          <li>Uso de entornos virtuales, Docker y GitHub para reproducibilidad y despliegue sencillo.</li>
+          <li>Optimización de scripts de Python para reducir tiempos de ejecución en simulaciones de torneos.</li>
         </ul>
       </div>
     </div>
   </section>
 
-  <footer>Para más detalle de proyectos específicos visita la sección de Proyectos.</footer>
+  <footer>
+    Para detalles concretos de cada trabajo revisa la sección de Proyectos.
+  </footer>
 
 </div>
 </body>
