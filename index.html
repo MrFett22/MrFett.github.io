@@ -18,7 +18,7 @@
     * { box-sizing: border-box; }
     body {
       margin: 0;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
       background: radial-gradient(circle at top, #1f2937 0, #020617 55%);
       color: var(--text);
     }
@@ -89,11 +89,25 @@
     }
 
     .card {
-      background: linear-gradient(145deg,#020617,#020617,#020617);
+      background: #020617;
       border-radius: 18px;
       padding: 20px 22px;
       border: 1px solid rgba(148,163,184,0.25);
       box-shadow: 0 18px 45px rgba(15,23,42,0.9);
+    }
+
+    .hero-image img {
+      width: 100%;
+      border-radius: 16px;
+      margin-bottom: 18px;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.4);
+    }
+
+    .profile-img {
+      width: 100%;
+      border-radius: 16px;
+      margin-bottom: 12px;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.4);
     }
 
     .hero h1 {
@@ -165,14 +179,19 @@
     </div>
   </nav>
 
+  <!-- HERO BANNER -->
+  <div class="hero-image">
+    <img src="https://images.unsplash.com/photo-1521412644187-c49fa049e84d?auto=format&fit=crop&w=1200&q=80">
+  </div>
+
   <!-- HEADER -->
   <header>
+
+    <!-- Left -->
     <div class="card hero">
       <h1>Diego Roberto Muñoz González</h1>
       <p>
-        Estudiante de Ciencia de Datos en el ITAM enfocado en analítica deportiva,
-        construcción de pipelines y modelos de machine learning para convertir datos en
-        decisiones accionables.
+        Ciencia de Datos · Analítica Deportiva · Pipelines · Machine Learning
       </p>
       <div class="chips">
         <span class="chip">Sports Analytics</span>
@@ -182,32 +201,33 @@
       </div>
     </div>
 
-    <div class="card contact">
+    <!-- Right: Foto genérica -->
+    <div class="card">
+      <img class="profile-img"
+           src="https://images.unsplash.com/photo-1603415526960-f7e0328c63b1?auto=format&fit=crop&w=600&q=80">
       <h2>Contacto</h2>
-      <p>📍 Ciudad de México, México</p>
-      <p>✉️ <a href="mailto:dmuozgon@itam.mx">tuemail@example.com</a></p>
-      <p>💼 <a href="https://www.linkedin.com/in/diego" target="_blank" rel="noopener">linkedin.com/in/tuusuario</a></p>
-      <p>🐙 <a href="https://github.com/MrFett22" target="_blank" rel="noopener">github.com/MrFett22</a></p>
+      <div class="contact">
+        <p>📍 Ciudad de México, México</p>
+        <p>✉️ <a href="mailto:dmuozgon@itam.mx">tuemail@example.com</a></p>
+        <p>💼 <a href="https://linkedin.com/in/DM" target="_blank">linkedin.com/in/tuusuario</a></p>
+        <p>🐙 <a href="https://github.com/MrFett22" target="_blank">github.com/MrFett22</a></p>
+      </div>
     </div>
+
   </header>
 
   <!-- SOBRE MÍ -->
   <section class="section card">
     <h2>Sobre mí</h2>
     <p>
-      Me interesa entender el juego más allá del marcador: modelo competiciones como la
-      UEFA Champions League usando Elo y simulaciones, analizo tiros de esquina con datos
-      de StatsBomb y diseño pipelines reproducibles en Python.
-      <br><br>
-      Disfruto trabajar con datos desde la extracción (APIs, archivos, bases de datos)
-      hasta la visualización, documentando el proceso con buenas prácticas de Git y
-      entornos aislados. Mi meta es dedicarme a proyectos donde se combinen deporte,
-      estadística y toma de decisiones.
+      Me interesa entender el juego más allá del marcador: modelo competiciones como la UEFA
+      Champions League usando Elo y simulaciones, analizo tiros de esquina con StatsBomb
+      y diseño pipelines reproducibles en Python.
     </p>
   </section>
 
   <footer>
-    Portafolio en desarrollo · actualizado desde GitHub Pages.
+    Portafolio actualizado desde GitHub Pages · 2025
   </footer>
 
 </div>
