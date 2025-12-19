@@ -41,6 +41,11 @@
           <span class="chip">ETL & SQL</span>
           <span class="chip">ML & visualización</span>
         </div>
+         <div class="hero-actions">
+          <a class="cta" href="proyectos.html">Ver proyectos</a>
+          <a class="cta cta-ghost" href="experiencia.html">Ver experiencia</a>
+          <a class="cta cta-ghost" href="mailto:dmouzgon@itam.mx">Contactar</a>
+        </div>
       </div>
     </section>
 
@@ -129,6 +134,46 @@
       .hi-s{
         font-size: .86rem;
         color: rgba(229,231,235,.86);
+      }
+    </style>
+    <section class="card pad" style="margin-top:18px;">
+      <h2>Proyectos destacados</h2>
+    
+      <div class="feat-grid">
+        <div class="feat">
+          <div class="feat-title">UCL Parity (Elo + Monte Carlo)</div>
+          <p class="small">Simulación de miles de temporadas para medir balance competitivo y comparar formatos.</p>
+          <a class="cta" href="proyectos.html" style="margin-top:10px; display:inline-block;">Ver detalle</a>
+        </div>
+    
+        <div class="feat">
+          <div class="feat-title">StatsBomb Corners Pipeline</div>
+          <p class="small">ETL + features + visualización táctica para analizar eficiencia en tiros de esquina.</p>
+          <a class="cta" href="proyectos.html" style="margin-top:10px; display:inline-block;">Ver detalle</a>
+        </div>
+      </div>
+    </section>
+    
+    <style>
+      .feat-grid{
+        display:grid;
+        grid-template-columns: 1fr;
+        gap: 12px;
+        margin-top: 10px;
+      }
+      @media(min-width: 860px){
+        .feat-grid{ grid-template-columns: 1fr 1fr; }
+      }
+      .feat{
+        border: 1px solid rgba(148,163,184,.22);
+        background: rgba(255,255,255,.03);
+        border-radius: 16px;
+        padding: 16px 16px;
+      }
+      .feat-title{
+        font-weight: 750;
+        font-size: 1rem;
+        margin-bottom: 6px;
       }
     </style>
 
