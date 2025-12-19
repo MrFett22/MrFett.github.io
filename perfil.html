@@ -1,142 +1,164 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>Perfil técnico – Diego Muñoz</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <style>
-    :root{--bg:#020617;--card:#020617;--accent:#38bdf8;--accent-soft:rgba(56,189,248,0.12);--text:#e5e7eb;--muted:#9ca3af;}
-    *{box-sizing:border-box;}
-    body{
-      margin:0;font-family:system-ui,-apple-system,"Segoe UI",sans-serif;
-      background:radial-gradient(circle at top,#0b1120 0,#020617 55%);
-      color:var(--text);
-    }
-    a{color:var(--accent);text-decoration:none;}a:hover{text-decoration:underline;}
-    .page{max-width:960px;margin:0 auto;padding:24px 16px 64px;}
-    nav{
-      position:sticky;top:0;z-index:10;background:rgba(15,23,42,0.95);
-      backdrop-filter:blur(10px);border-bottom:1px solid rgba(148,163,184,0.25);
-      margin:0 -16px 24px;padding:10px 16px;
-    }
-    nav .nav-inner{
-      max-width:960px;margin:0 auto;display:flex;align-items:center;
-      justify-content:space-between;gap:12px;
-    }
-    .brand{font-weight:600;font-size:0.95rem;}
-    .nav-links{display:flex;flex-wrap:wrap;gap:8px;font-size:0.85rem;}
-    .nav-links a{
-      padding:4px 10px;border-radius:999px;border:1px solid transparent;color:var(--muted);
-    }
-    .nav-links a:hover{border-color:rgba(148,163,184,0.7);color:var(--text);}
-    .nav-links .active{
-      background:var(--accent-soft);color:var(--accent);
-      border-color:rgba(56,189,248,0.6);
-    }
-    .grid{
-      display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1.4fr);gap:18px;
-    }
-    @media(max-width:800px){.grid{grid-template-columns:minmax(0,1fr);}}
-    .card{
-      background:var(--card);border-radius:18px;padding:20px 22px;
-      border:1px solid rgba(148,163,184,0.25);
-      box-shadow:0 18px 45px rgba(15,23,42,0.9);
-    }
-    h1{margin:0 0 6px;font-size:1.6rem;}
-    h2{margin:0 0 8px;font-size:0.95rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);}
-    .section{margin-bottom:18px;}
-    ul.compact{padding-left:18px;margin:4px 0;font-size:0.86rem;}
-    ul.compact li{margin-bottom:3px;}
-    .image-card img{
-      width:100%;border-radius:14px;margin-bottom:8px;object-fit:cover;
-      box-shadow:0 14px 35px rgba(0,0,0,0.55);
-    }
-    footer{margin-top:28px;font-size:0.75rem;color:var(--muted);text-align:center;}
-  </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Perfil — Diego Muñoz</title>
+  <link rel="stylesheet" href="assets/style.css" />
 </head>
-<body>
-<div class="page">
 
-  <nav>
+<body>
+  <!-- NAV -->
+  <div class="nav">
     <div class="nav-inner">
       <div class="brand">Diego Muñoz · Sports Data & Analytics</div>
-      <div class="nav-links">
-        <a href="index.html">Sobre mí</a>
+      <div class="links">
+        <a href="index.html">Inicio</a>
         <a href="experiencia.html">Experiencia</a>
         <a href="proyectos.html">Proyectos</a>
-        <a href="perfil.html" class="active">Perfil técnico</a>
+        <a class="active" href="perfil.html">Perfil</a>
       </div>
     </div>
-  </nav>
-
-  <section class="section card">
-    <h1>Perfil técnico</h1>
-    <p style="font-size:0.9rem;color:#d1d5db;margin-bottom:8px;">
-      Herramientas y conocimientos que uso para construir modelos y análisis reproducibles aplicados al deporte.
-    </p>
-  </section>
-
-  <div class="grid">
-    <section class="section card">
-      <h2>Habilidades técnicas</h2>
-
-      <strong>Lenguajes</strong>
-      <ul class="compact">
-        <li>Python (Pandas, NumPy, scikit-learn, StatsBombPy, mplsoccer).</li>
-        <li>SQL (PostgreSQL, consultas analíticas para reporting deportivo).</li>
-      </ul>
-
-      <strong>Datos & ML</strong>
-      <ul class="compact">
-        <li>ETL y pipelines de datos desde APIs/JSON hasta tablas limpias.</li>
-        <li>EDA y visualización de datos para entender rendimiento de equipos y jugadores.</li>
-        <li>Modelos supervisados básicos (clasificación, regresión) y evaluaciones simples.</li>
-      </ul>
-
-      <strong>Herramientas</strong>
-      <ul class="compact">
-        <li>Git & GitHub para control de versiones y colaboración.</li>
-        <li>Jupyter Notebook y VSCode.</li>
-        <li>Entornos virtuales (venv) y Docker para reproducibilidad.</li>
-      </ul>
-
-      <h2>Educación</h2>
-      <ul class="compact">
-        <li>Licenciatura en Ciencia de Datos – ITAM.</li>
-        <li>Cursos relevantes: Fuentes de Datos, Estadística Matemática, Arquitectura de Computadoras,
-            Marketing Deportivo basado en Datos, Diseño de Mercados.</li>
-      </ul>
-
-      <h2>Idiomas & intereses</h2>
-      <ul class="compact">
-        <li>Español – nativo. Inglés – [nivel aproximado].</li>
-        <li>Interés en modelos de rating (Elo), simulación de torneos y análisis de tiros de esquina.</li>
-      </ul>
-    </section>
-
-    <aside class="section">
-      <div class="card image-card">
-        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80" alt="Dashboard deportivo en pantalla">
-        <p style="font-size:0.82rem;color:#d1d5db;">
-          Dashboards y visualizaciones para comunicar hallazgos a gente que piensa en fútbol antes que en código.
-        </p>
-      </div>
-
-      <div class="card image-card">
-        <img src="https://images.unsplash.com/photo-1518081461904-9be1a4a6f37f?auto=format&fit=crop&w=1200&q=80" alt="Cancha de fútbol vista aérea">
-        <p style="font-size:0.82rem;color:#d1d5db;">
-          Conectar el código con el contexto táctico: zonas de remate, presión, formatos de competición.
-        </p>
-      </div>
-    </aside>
   </div>
 
-  <footer>
-    ¿Te interesa colaborar en un proyecto de analítica deportiva? ·
-    <a href="mailto:tuemail@example.com">Contáctame por correo</a>.
-  </footer>
+  <div class="container">
 
-</div>
+    <!-- HEADER -->
+    <section class="card pad">
+      <h1>Perfil técnico</h1>
+      <p class="small">
+        Habilidades técnicas aplicadas a analítica deportiva, ciencia de datos e ingeniería de datos.
+      </p>
+    </section>
+
+    <!-- GRID -->
+    <div class="grid" style="margin-top:18px;">
+
+      <!-- LEFT -->
+      <section class="card pad">
+        <h2>Habilidades principales</h2>
+
+        <div class="skill">
+          <div class="skill-head">
+            <span>Python (Pandas, NumPy, scikit-learn)</span>
+            <span class="skill-val">Avanzado</span>
+          </div>
+          <div class="bar"><div class="fill" style="width:85%"></div></div>
+        </div>
+
+        <div class="skill">
+          <div class="skill-head">
+            <span>Analítica deportiva (fútbol / NFL)</span>
+            <span class="skill-val">Avanzado</span>
+          </div>
+          <div class="bar"><div class="fill" style="width:85%"></div></div>
+        </div>
+
+        <div class="skill">
+          <div class="skill-head">
+            <span>SQL & bases de datos</span>
+            <span class="skill-val">Intermedio</span>
+          </div>
+          <div class="bar"><div class="fill" style="width:70%"></div></div>
+        </div>
+
+        <div class="skill">
+          <div class="skill-head">
+            <span>ETL & Pipelines de datos</span>
+            <span class="skill-val">Intermedio</span>
+          </div>
+          <div class="bar"><div class="fill" style="width:72%"></div></div>
+        </div>
+
+        <div class="skill">
+          <div class="skill-head">
+            <span>Machine Learning</span>
+            <span class="skill-val">Intermedio</span>
+          </div>
+          <div class="bar"><div class="fill" style="width:65%"></div></div>
+        </div>
+
+        <div class="skill">
+          <div class="skill-head">
+            <span>Visualización (matplotlib, mplsoccer)</span>
+            <span class="skill-val">Intermedio</span>
+          </div>
+          <div class="bar"><div class="fill" style="width:68%"></div></div>
+        </div>
+      </section>
+
+      <!-- RIGHT -->
+      <aside class="card pad">
+        <h2>Educación</h2>
+        <ul>
+          <li><strong>Licenciatura en Ciencia de Datos</strong> — ITAM</li>
+          <li>Cursos relevantes: Fuentes de Datos, Estadística Matemática, Arquitectura de Computadoras,
+              Marketing Deportivo basado en Datos, Diseño de Mercados.</li>
+        </ul>
+
+        <h2 style="margin-top:18px;">Herramientas</h2>
+        <ul>
+          <li>Git & GitHub</li>
+          <li>PostgreSQL</li>
+          <li>Docker</li>
+          <li>Jupyter Notebook</li>
+          <li>VS Code</li>
+        </ul>
+
+        <h2 style="margin-top:18px;">Idiomas</h2>
+        <ul>
+          <li>Español — Nativo</li>
+          <li>Inglés — Avanzado (lectura técnica, documentación, papers)</li>
+        </ul>
+
+        <h2 style="margin-top:18px;">Enfoque</h2>
+        <p class="small">
+          Interés en roles de analítica deportiva, ciencia de datos aplicada y
+          proyectos donde se combinen estadística, modelos y toma de decisiones.
+        </p>
+      </aside>
+
+    </div>
+
+    <div class="footer">
+      Perfil técnico · En constante actualización.
+    </div>
+  </div>
+
+  <!-- CSS específico barras -->
+  <style>
+    .skill{
+      margin-bottom: 14px;
+    }
+    .skill-head{
+      display:flex;
+      justify-content:space-between;
+      font-size:.88rem;
+      margin-bottom:6px;
+    }
+    .skill-val{
+      color: var(--muted);
+      font-size:.8rem;
+    }
+    .bar{
+      width:100%;
+      height: 8px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.08);
+      border: 1px solid rgba(148,163,184,.25);
+      overflow:hidden;
+    }
+    .fill{
+      height:100%;
+      border-radius: 999px;
+      background: linear-gradient(
+        90deg,
+        rgba(56,189,248,.9),
+        rgba(96,165,250,.9)
+      );
+      box-shadow: 0 0 10px rgba(56,189,248,.45);
+    }
+  </style>
+
 </body>
 </html>
