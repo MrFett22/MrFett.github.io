@@ -28,11 +28,13 @@
         src="https://images.unsplash.com/photo-1518091043644-c1f1fb77a1c1?auto=format&fit=crop&w=1600&q=80"
         alt="Estadio de fútbol"
       />
-      <div class="hero-content">
-        <h1 class="hero-title">Analítica para entender el juego</h1>
-        <p class="hero-sub">
-          Modelos, datos y visualizaciones aplicadas al fútbol para convertir eventos en decisiones.
-        </p>
+       <div class="hero-content">
+        <div class="hero-box">
+          <h1 class="hero-title">Analítica para entender el juego</h1>
+          <p class="hero-sub">
+            Modelos, datos y visualizaciones aplicadas al fútbol para convertir eventos en decisiones.
+          </p>
+        </div>
         <div class="chips">
           <span class="chip">Elo & simulación</span>
           <span class="chip">StatsBomb</span>
@@ -71,6 +73,64 @@
         </div>
       </aside>
     </div>
+    <!-- HIGHLIGHTS -->
+    <section class="card pad" style="margin-top:18px;">
+      <h2>Highlights</h2>
+    
+      <div class="hi-grid">
+        <div class="hi">
+          <div class="hi-k">Modelos</div>
+          <div class="hi-v">Elo + Monte Carlo</div>
+          <div class="hi-s">Simulación de torneos y escenarios</div>
+        </div>
+    
+        <div class="hi">
+          <div class="hi-k">Datos</div>
+          <div class="hi-v">StatsBomb / JSON</div>
+          <div class="hi-s">Pipelines, limpieza y features</div>
+        </div>
+    
+        <div class="hi">
+          <div class="hi-k">Output</div>
+          <div class="hi-v">Visualización táctica</div>
+          <div class="hi-s">Gráficas claras para decisiones</div>
+        </div>
+      </div>
+    </section>
+    
+    <style>
+      .hi-grid{
+        display:grid;
+        grid-template-columns: 1fr;
+        gap: 12px;
+        margin-top: 10px;
+      }
+      @media(min-width: 860px){
+        .hi-grid{ grid-template-columns: 1fr 1fr 1fr; }
+      }
+      .hi{
+        border: 1px solid rgba(148,163,184,.22);
+        background: rgba(255,255,255,.03);
+        border-radius: 16px;
+        padding: 14px 14px;
+      }
+      .hi-k{
+        font-size: .78rem;
+        letter-spacing: .14em;
+        text-transform: uppercase;
+        color: var(--muted);
+        margin-bottom: 6px;
+      }
+      .hi-v{
+        font-weight: 750;
+        font-size: 1rem;
+        margin-bottom: 4px;
+      }
+      .hi-s{
+        font-size: .86rem;
+        color: rgba(229,231,235,.86);
+      }
+    </style>
 
     <div class="footer">Hecho con GitHub Pages · 2025</div>
   </div>
