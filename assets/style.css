@@ -28,8 +28,10 @@ a:hover{text-decoration:underline}
 .container{
   max-width: 1040px;
   margin: 0 auto;
-  padding: 22px 16px 72px;
+  padding: 22px 16px 28px; /* antes 72px */
+  min-height: calc(100vh - 58px); /* llena pantalla (nav aprox) */
 }
+
 
 /* NAV */
 .nav{
@@ -173,3 +175,41 @@ li{ margin: 4px 0; }
 }
 .small{ font-size:.86rem; color: rgba(156,163,175,.95); }
 .kv p{ margin: 3px 0; }
+
+/* ===== HERO title legible + animación ===== */
+
+.hero-content{
+  padding: 22px 22px 22px;
+}
+
+.hero-title{
+  font-size: clamp(1.35rem, 2.2vw, 1.85rem);
+  line-height: 1.15;
+}
+
+/* Caja glass para que el texto se lea siempre */
+.hero-box{
+  display: inline-block;
+  max-width: 72ch;
+  padding: 12px 14px;
+  border-radius: 16px;
+  background: rgba(2,6,23,.55);
+  border: 1px solid rgba(148,163,184,.22);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 18px 60px rgba(0,0,0,.40);
+}
+
+/* Animación suave */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.hero .hero-title,
+.hero .hero-sub,
+.hero .chips{
+  animation: fadeUp .55s ease both;
+}
+
+.hero .hero-sub{ animation-delay: .08s; }
+.hero .chips{ animation-delay: .14s; }
