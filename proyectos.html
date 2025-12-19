@@ -1,175 +1,290 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>Proyectos – Diego Muñoz</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <style>
-    :root{--bg:#020617;--card:#020617;--accent:#38bdf8;--accent-soft:rgba(56,189,248,0.12);--text:#e5e7eb;--muted:#9ca3af;}
-    *{box-sizing:border-box;}
-    body{
-      margin:0;font-family:system-ui,-apple-system,"Segoe UI",sans-serif;
-      background:radial-gradient(circle at top,#0b1120 0,#020617 55%);
-      color:var(--text);
-    }
-    a{color:var(--accent);text-decoration:none;}a:hover{text-decoration:underline;}
-    .page{max-width:960px;margin:0 auto;padding:24px 16px 64px;}
-    nav{
-      position:sticky;top:0;z-index:10;background:rgba(15,23,42,0.95);
-      backdrop-filter:blur(10px);border-bottom:1px solid rgba(148,163,184,0.25);
-      margin:0 -16px 24px;padding:10px 16px;
-    }
-    nav .nav-inner{
-      max-width:960px;margin:0 auto;display:flex;align-items:center;
-      justify-content:space-between;gap:12px;
-    }
-    .brand{font-weight:600;font-size:0.95rem;}
-    .nav-links{display:flex;flex-wrap:wrap;gap:8px;font-size:0.85rem;}
-    .nav-links a{
-      padding:4px 10px;border-radius:999px;border:1px solid transparent;color:var(--muted);
-    }
-    .nav-links a:hover{border-color:rgba(148,163,184,0.7);color:var(--text);}
-    .nav-links .active{
-      background:var(--accent-soft);color:var(--accent);
-      border-color:rgba(56,189,248,0.6);
-    }
-    .card{
-      background:var(--card);border-radius:18px;padding:20px 22px;
-      border:1px solid rgba(148,163,184,0.25);
-      box-shadow:0 18px 45px rgba(15,23,42,0.9);
-    }
-    h1{margin:0 0 6px;font-size:1.6rem;}
-    h2{margin:0 0 8px;font-size:0.95rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);}
-    .section{margin-bottom:18px;}
-    .projects-grid{
-      display:grid;grid-template-columns:minmax(0,1fr);gap:16px;
-    }
-    @media(min-width:780px){
-      .projects-grid{grid-template-columns:minmax(0,1fr) minmax(0,1fr);}
-    }
-    .project{
-      background:linear-gradient(145deg,#020617,#020617);border-radius:16px;
-      border:1px solid rgba(148,163,184,0.35);
-      overflow:hidden;display:flex;flex-direction:column;height:100%;
-    }
-    .project img{
-      width:100%;height:150px;object-fit:cover;
-      filter:saturate(1.1) contrast(1.05) brightness(0.95);
-    }
-    .project-body{padding:12px 14px 14px;}
-    .project-title{font-size:0.96rem;font-weight:600;margin-bottom:4px;}
-    .project-sub{font-size:0.78rem;color:var(--muted);margin-bottom:6px;}
-    .project-desc{font-size:0.86rem;color:#d1d5db;margin-bottom:6px;}
-    .chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:2px;}
-    .chip{
-      font-size:0.73rem;border-radius:999px;padding:3px 9px;
-      background:#020617;border:1px solid rgba(148,163,184,0.45);
-    }
-    footer{margin-top:28px;font-size:0.75rem;color:var(--muted);text-align:center;}
-  </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Proyectos — Diego Muñoz</title>
+  <link rel="stylesheet" href="assets/style.css" />
 </head>
-<body>
-<div class="page">
 
-  <nav>
+<body>
+  <!-- NAV -->
+  <div class="nav">
     <div class="nav-inner">
       <div class="brand">Diego Muñoz · Sports Data & Analytics</div>
-      <div class="nav-links">
-        <a href="index.html">Sobre mí</a>
+      <div class="links">
+        <a href="index.html">Inicio</a>
         <a href="experiencia.html">Experiencia</a>
-        <a href="proyectos.html" class="active">Proyectos</a>
-        <a href="perfil.html">Perfil técnico</a>
+        <a class="active" href="proyectos.html">Proyectos</a>
+        <a href="perfil.html">Perfil</a>
       </div>
     </div>
-  </nav>
+  </div>
 
-  <section class="section card">
-    <h1>Proyectos</h1>
-    <p style="font-size:0.9rem;color:#d1d5db;margin-bottom:10px;">
-      Selección de proyectos donde combino fútbol, datos y modelos estadísticos.
-    </p>
-  </section>
+  <div class="container">
 
-  <section class="section">
-    <div class="projects-grid">
+    <!-- HEADER -->
+    <section class="card pad">
+      <h1>Proyectos</h1>
+      <p class="small">
+        Selección de proyectos de analítica deportiva y ciencia de datos: pipelines, modelos y simulación.
+      </p>
+    </section>
 
-      <article class="project">
-        <img src="https://images.unsplash.com/photo-1543326727-cf6c39e8f84c?auto=format&fit=crop&w=900&q=80" alt="Balón de Champions League">
-        <div class="project-body">
-          <div class="project-title">Paridad en la UEFA Champions League</div>
-          <div class="project-sub">Elo · Simulación · Gini</div>
-          <p class="project-desc">
-            Modelo para medir el balance competitivo en la Champions bajo diferentes formatos de torneo,
-            simulando miles de temporadas con Elo y midiendo desigualdad con índices de Gini.
-          </p>
-          <div class="chips">
-            <span class="chip">Python</span>
-            <span class="chip">Pandas</span>
-            <span class="chip">Monte Carlo</span>
-            <span class="chip">Visualización</span>
+    <!-- GRID CARDS -->
+    <section style="margin-top:18px;">
+      <div class="projects-grid">
+
+        <!-- CARD 1 -->
+        <article class="p-card">
+          <img
+            class="p-img"
+            src="https://images.unsplash.com/photo-1543326727-cf6c39e8f84c?auto=format&fit=crop&w=1400&q=80"
+            alt="Champions League"
+          />
+          <div class="p-body">
+            <div class="p-top">
+              <div>
+                <div class="p-title">Paridad en la UEFA Champions League</div>
+                <div class="p-sub">Elo · Monte Carlo · Métricas de desigualdad</div>
+              </div>
+              <span class="badge">Modeling</span>
+            </div>
+
+            <p class="p-desc">
+              Modelo para medir balance competitivo: estima ratings Elo, simula miles de temporadas
+              y compara formatos (grupos/eliminación) usando métricas como concentración y paridad.
+            </p>
+
+            <div class="p-tags">
+              <span class="tag">Python</span>
+              <span class="tag">Pandas</span>
+              <span class="tag">Simulación</span>
+              <span class="tag">Elo</span>
+            </div>
+
+            <div class="p-actions">
+              <!-- TODO: cambia links -->
+              <a class="btn" href="https://github.com/MrFett22" target="_blank" rel="noopener">GitHub</a>
+              <a class="btn btn-ghost" href="#" target="_blank" rel="noopener">Demo/Reporte</a>
+            </div>
           </div>
-        </div>
-      </article>
+        </article>
 
-      <article class="project">
-        <img src="https://images.unsplash.com/photo-1604586376807-f73102da85e1?auto=format&fit=crop&w=900&q=80" alt="Esquina de campo de fútbol">
-        <div class="project-body">
-          <div class="project-title">Pipeline StatsBomb para tiros de esquina</div>
-          <div class="project-sub">Liga MX · análisis táctico</div>
-          <p class="project-desc">
-            Pipeline que extrae eventos de StatsBomb, limpia y transforma los datos, genera métricas
-            de xG, tipo de cobro, zonas de remate y presión, y produce visualizaciones tácticas.
-          </p>
-          <div class="chips">
-            <span class="chip">StatsBombPy</span>
-            <span class="chip">ETL</span>
-            <span class="chip">mplsoccer</span>
+        <!-- CARD 2 -->
+        <article class="p-card">
+          <img
+            class="p-img"
+            src="https://images.unsplash.com/photo-1604586376807-f73102da85e1?auto=format&fit=crop&w=1400&q=80"
+            alt="Corner kick"
+          />
+          <div class="p-body">
+            <div class="p-top">
+              <div>
+                <div class="p-title">Pipeline StatsBomb — Tiros de esquina</div>
+                <div class="p-sub">Liga MX · xG · presión · zonas</div>
+              </div>
+              <span class="badge">Data</span>
+            </div>
+
+            <p class="p-desc">
+              Pipeline end-to-end: extracción de eventos, limpieza, generación de features, cálculo de métricas
+              (xG, presión, tiempo desde el cobro) y visualización táctica para scouting.
+            </p>
+
+            <div class="p-tags">
+              <span class="tag">StatsBombPy</span>
+              <span class="tag">ETL</span>
+              <span class="tag">PostgreSQL</span>
+              <span class="tag">mplsoccer</span>
+            </div>
+
+            <div class="p-actions">
+              <!-- TODO: cambia links -->
+              <a class="btn" href="https://github.com/MrFett22" target="_blank" rel="noopener">GitHub</a>
+              <a class="btn btn-ghost" href="#" target="_blank" rel="noopener">Notebook</a>
+            </div>
           </div>
-        </div>
-      </article>
+        </article>
 
-      <article class="project">
-        <img src="https://images.unsplash.com/photo-1518002171953-a080ee817e1f?auto=format&fit=crop&w=900&q=80" alt="Mapa urbano nocturno">
-        <div class="project-body">
-          <div class="project-title">Optimización de ubicación de farmacias</div>
-          <div class="project-sub">Datos geoespaciales · demanda</div>
-          <p class="project-desc">
-            Análisis de datos de población, competencia y accesibilidad para evaluar la mejor ubicación
-            de nuevas sucursales y cuantificar el impacto de cada escenario.
-          </p>
-          <div class="chips">
-            <span class="chip">Python</span>
-            <span class="chip">Geodatos</span>
-            <span class="chip">Modelos de demanda</span>
+        <!-- CARD 3 -->
+        <article class="p-card">
+          <img
+            class="p-img"
+            src="https://images.unsplash.com/photo-1521412644187-c49fa049e84d?auto=format&fit=crop&w=1400&q=80"
+            alt="Fútbol analytics"
+          />
+          <div class="p-body">
+            <div class="p-top">
+              <div>
+                <div class="p-title">Modelo de rendimiento — métricas de juego</div>
+                <div class="p-sub">Features · clasificación/regresión · evaluación</div>
+              </div>
+              <span class="badge">ML</span>
+            </div>
+
+            <p class="p-desc">
+              Modelos supervisados para predecir resultados o eventos (ej. peligro/ocasiones), con feature engineering,
+              validación y métricas. Enfoque en interpretabilidad y comunicación del desempeño.
+            </p>
+
+            <div class="p-tags">
+              <span class="tag">scikit-learn</span>
+              <span class="tag">Feature Eng.</span>
+              <span class="tag">Validación</span>
+              <span class="tag">Visualización</span>
+            </div>
+
+            <div class="p-actions">
+              <!-- TODO: cambia links -->
+              <a class="btn" href="https://github.com/MrFett22" target="_blank" rel="noopener">GitHub</a>
+              <a class="btn btn-ghost" href="#" target="_blank" rel="noopener">Reporte</a>
+            </div>
           </div>
-        </div>
-      </article>
+        </article>
 
-      <article class="project">
-        <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=900&q=80" alt="Gente viendo deportes en pantallas">
-        <div class="project-body">
-          <div class="project-title">Modelos para fantasy y apuestas recreativas</div>
-          <div class="project-sub">NFL · fútbol</div>
-          <p class="project-desc">
-            Herramientas y scripts para estimar valor esperado de picks, gestionar riesgo y comparar
-            jugadores utilizando métricas avanzadas y distribuciones simuladas.
-          </p>
-          <div class="chips">
-            <span class="chip">Python</span>
-            <span class="chip">Modelado</span>
-            <span class="chip">Sports analytics</span>
+        <!-- CARD 4 -->
+        <article class="p-card">
+          <img
+            class="p-img"
+            src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1400&q=80"
+            alt="Sports screens"
+          />
+          <div class="p-body">
+            <div class="p-top">
+              <div>
+                <div class="p-title">Fantasy tools — decisiones bajo incertidumbre</div>
+                <div class="p-sub">Rankings · valor esperado · comparaciones</div>
+              </div>
+              <span class="badge">Sports</span>
+            </div>
+
+            <p class="p-desc">
+              Scripts para evaluar jugadores con métricas avanzadas, ajustar por matchup y cuantificar decisiones
+              (alineación, trades) con enfoque probabilístico.
+            </p>
+
+            <div class="p-tags">
+              <span class="tag">Python</span>
+              <span class="tag">Métricas</span>
+              <span class="tag">Probabilidad</span>
+              <span class="tag">Dash/Report</span>
+            </div>
+
+            <div class="p-actions">
+              <!-- TODO: cambia links -->
+              <a class="btn" href="https://github.com/MrFett22" target="_blank" rel="noopener">GitHub</a>
+              <a class="btn btn-ghost" href="#" target="_blank" rel="noopener">Notas</a>
+            </div>
           </div>
-        </div>
-      </article>
+        </article>
 
+      </div>
+    </section>
+
+    <div class="footer">
+      Tip: agrega links reales (repos/notebooks) para que tu portafolio sea clickeable.
     </div>
-  </section>
+  </div>
 
-  <footer>
-    Más proyectos irán apareciendo conforme los vaya subiendo a GitHub.
-  </footer>
+  <!-- CSS específico para cards -->
+  <style>
+    .projects-grid{
+      display:grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+    @media (min-width: 860px){
+      .projects-grid{ grid-template-columns: 1fr 1fr; }
+    }
 
-</div>
+    .p-card{
+      background: linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.03));
+      border: 1px solid rgba(148,163,184,.25);
+      border-radius: 18px;
+      overflow:hidden;
+      box-shadow: 0 18px 60px rgba(0,0,0,.45);
+      display:flex;
+      flex-direction:column;
+      transition: transform .18s ease, border-color .18s ease;
+    }
+    .p-card:hover{
+      transform: translateY(-3px);
+      border-color: rgba(56,189,248,.45);
+    }
+
+    .p-img{
+      width:100%;
+      height: 170px;
+      object-fit: cover;
+      filter: saturate(1.1) contrast(1.05) brightness(.92);
+    }
+
+    .p-body{ padding: 14px 14px 16px; }
+    .p-top{
+      display:flex;
+      align-items:flex-start;
+      justify-content:space-between;
+      gap: 10px;
+      margin-bottom: 8px;
+    }
+    .p-title{ font-weight: 700; font-size: 1rem; }
+    .p-sub{ font-size: .8rem; color: var(--muted); margin-top: 2px; }
+
+    .badge{
+      font-size: .75rem;
+      padding: 5px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(56,189,248,.45);
+      background: rgba(56,189,248,.10);
+      color: rgba(56,189,248,.95);
+      white-space: nowrap;
+    }
+
+    .p-desc{
+      font-size: .88rem;
+      color: rgba(229,231,235,.92);
+      line-height: 1.55;
+      margin: 0 0 10px;
+    }
+
+    .p-tags{
+      display:flex;
+      flex-wrap:wrap;
+      gap: 8px;
+      margin-bottom: 12px;
+    }
+    .tag{
+      font-size: .78rem;
+      padding: 5px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(148,163,184,.35);
+      background: rgba(255,255,255,.03);
+      color: rgba(229,231,235,.9);
+    }
+
+    .p-actions{
+      display:flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .btn{
+      display:inline-block;
+      padding: 9px 12px;
+      border-radius: 12px;
+      border: 1px solid rgba(56,189,248,.45);
+      background: rgba(56,189,248,.12);
+      color: rgba(56,189,248,.95);
+      font-weight: 600;
+      font-size: .85rem;
+    }
+    .btn:hover{ text-decoration:none; border-color: rgba(56,189,248,.65); }
+    .btn-ghost{
+      border: 1px solid rgba(148,163,184,.35);
+      background: rgba(255,255,255,.03);
+      color: rgba(229,231,235,.92);
+    }
+    .btn-ghost:hover{ border-color: rgba(148,163,184,.6); }
+  </style>
 </body>
 </html>
