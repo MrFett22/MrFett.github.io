@@ -1,148 +1,160 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>Experiencia – Diego Muñoz</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <style>
-    :root{--bg:#020617;--card:#020617;--accent:#38bdf8;--accent-soft:rgba(56,189,248,0.12);--text:#e5e7eb;--muted:#9ca3af;}
-    *{box-sizing:border-box;}
-    body{
-      margin:0;font-family:system-ui,-apple-system,"Segoe UI",sans-serif;
-      background:radial-gradient(circle at top,#0b1120 0,#020617 55%);
-      color:var(--text);
-    }
-    a{color:var(--accent);text-decoration:none;}a:hover{text-decoration:underline;}
-    .page{max-width:960px;margin:0 auto;padding:24px 16px 64px;}
-    nav{
-      position:sticky;top:0;z-index:10;background:rgba(15,23,42,0.95);
-      backdrop-filter:blur(10px);border-bottom:1px solid rgba(148,163,184,0.25);
-      margin:0 -16px 24px;padding:10px 16px;
-    }
-    nav .nav-inner{
-      max-width:960px;margin:0 auto;display:flex;align-items:center;
-      justify-content:space-between;gap:12px;
-    }
-    .brand{font-weight:600;font-size:0.95rem;}
-    .nav-links{display:flex;flex-wrap:wrap;gap:8px;font-size:0.85rem;}
-    .nav-links a{
-      padding:4px 10px;border-radius:999px;border:1px solid transparent;color:var(--muted);
-    }
-    .nav-links a:hover{border-color:rgba(148,163,184,0.7);color:var(--text);}
-    .nav-links .active{
-      background:var(--accent-soft);color:var(--accent);
-      border-color:rgba(56,189,248,0.6);
-    }
-    .banner{
-      margin-bottom:22px;border-radius:18px;overflow:hidden;
-      border:1px solid rgba(56,189,248,0.35);
-      box-shadow:0 22px 50px rgba(15,23,42,1);
-    }
-    .banner img{
-      width:100%;display:block;object-fit:cover;
-      filter:saturate(1.15) contrast(1.05) brightness(0.95);
-    }
-    .card{
-      background:var(--card);border-radius:18px;padding:20px 22px;
-      border:1px solid rgba(148,163,184,0.25);
-      box-shadow:0 18px 45px rgba(15,23,42,0.9);
-    }
-    h1{margin:0 0 6px;font-size:1.6rem;}
-    h2{margin:0 0 10px;font-size:0.95rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);}
-    .section{margin-bottom:18px;}
-    .item{margin-bottom:14px;}
-    .item:last-child{margin-bottom:0;}
-    .item-title{display:flex;justify-content:space-between;gap:10px;font-size:0.95rem;}
-    .item-meta{font-size:0.8rem;color:var(--muted);margin:2px 0 4px;}
-    .item-desc{font-size:0.88rem;color:#d1d5db;}
-    ul.compact{padding-left:18px;margin:4px 0 0;font-size:0.86rem;}
-    ul.compact li{margin-bottom:3px;}
-    footer{margin-top:28px;font-size:0.75rem;color:var(--muted);text-align:center;}
-  </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Experiencia — Diego Muñoz</title>
+  <link rel="stylesheet" href="assets/style.css" />
 </head>
-<body>
-<div class="page">
 
-  <nav>
+<body>
+  <!-- NAV -->
+  <div class="nav">
     <div class="nav-inner">
       <div class="brand">Diego Muñoz · Sports Data & Analytics</div>
-      <div class="nav-links">
-        <a href="index.html">Sobre mí</a>
-        <a href="experiencia.html" class="active">Experiencia</a>
+      <div class="links">
+        <a href="index.html">Inicio</a>
+        <a class="active" href="experiencia.html">Experiencia</a>
         <a href="proyectos.html">Proyectos</a>
-        <a href="perfil.html">Perfil técnico</a>
+        <a href="perfil.html">Perfil</a>
       </div>
     </div>
-  </nav>
-
-  <div class="banner">
-    <img src="https://images.unsplash.com/photo-1526232761682-d26e03ac148e?auto=format&fit=crop&w=1400&q=80" alt="Entrenamiento de fútbol con datos">
   </div>
 
-  <section class="section card">
-    <h1>Experiencia</h1>
-    <p style="font-size:0.9rem;color:#d1d5db;margin-bottom:10px;">
-      Experiencia académica y personal enfocada en analítica deportiva y proyectos de ciencia de datos.
-    </p>
-  </section>
+  <div class="container">
 
-  <section class="section card">
-    <h2>Analítica deportiva</h2>
+    <!-- HEADER -->
+    <section class="card pad">
+      <h1>Experiencia</h1>
+      <p class="small">
+        Experiencia académica y personal enfocada en analítica deportiva, ciencia de datos
+        y construcción de pipelines reproducibles.
+      </p>
+    </section>
 
-    <div class="item">
-      <div class="item-title">
-        <strong>Sports Data Analyst (proyectos académicos)</strong>
-        <span>2023 – actual</span>
+    <!-- TIMELINE -->
+    <section class="card pad" style="margin-top:18px;">
+      <h2>Línea de tiempo</h2>
+
+      <div class="timeline">
+
+        <!-- ITEM -->
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <div class="timeline-header">
+              <strong>Sports Data Analyst — Proyectos académicos</strong>
+              <span class="timeline-date">2023 – Presente</span>
+            </div>
+            <p class="timeline-meta">ITAM · Fútbol europeo y latinoamericano</p>
+            <ul>
+              <li>Desarrollo de modelos de paridad competitiva para la UEFA Champions League usando ratings Elo.</li>
+              <li>Simulación de miles de temporadas mediante técnicas de Monte Carlo para evaluar formatos de torneo.</li>
+              <li>Análisis táctico de tiros de esquina con datos de StatsBomb (xG, presión, zonas de remate).</li>
+              <li>Visualización de resultados para comunicar hallazgos de forma clara y accionable.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- ITEM -->
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <div class="timeline-header">
+              <strong>Ingeniería de Datos — ETL & Pipelines</strong>
+              <span class="timeline-date">2023 – Presente</span>
+            </div>
+            <p class="timeline-meta">Curso Fuentes de Datos · Proyectos personales</p>
+            <ul>
+              <li>Construcción de pipelines desde APIs y archivos JSON hasta bases de datos relacionales (PostgreSQL).</li>
+              <li>Limpieza, transformación y validación de datos deportivos a gran escala.</li>
+              <li>Automatización de procesos usando Python, SQL y control de versiones con Git.</li>
+              <li>Uso de entornos virtuales y Docker para garantizar reproducibilidad.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- ITEM -->
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <div class="timeline-header">
+              <strong>Fantasy & Scouting Amateur</strong>
+              <span class="timeline-date">2022 – Presente</span>
+            </div>
+            <p class="timeline-meta">NFL & fútbol · Proyectos personales</p>
+            <ul>
+              <li>Análisis de métricas avanzadas para evaluación de jugadores (volumen, eficiencia, contexto).</li>
+              <li>Construcción de rankings personalizados para toma de decisiones en fantasy.</li>
+              <li>Exploración de modelos simples de predicción y valor esperado.</li>
+            </ul>
+          </div>
+        </div>
+
       </div>
-      <div class="item-meta">ITAM · Fútbol europeo y latinoamericano</div>
-      <div class="item-desc">
-        <ul class="compact">
-          <li>Modelos de paridad competitiva en la UEFA Champions League usando Elo y simulaciones de miles de temporadas.</li>
-          <li>Análisis de tiros de esquina con datos de StatsBomb (xG, tipo de cobro, presión, tiempo desde el cobro).</li>
-          <li>Modelos de clasificación/regresión para evaluar rendimiento ofensivo y defensivo.</li>
-        </ul>
-      </div>
+    </section>
+
+    <div class="footer">
+      Experiencia en evolución · Enfoque en analítica deportiva y datos.
     </div>
 
-    <div class="item">
-      <div class="item-title">
-        <strong>Fantasy & scouting amateur</strong>
-        <span>2022 – actual</span>
-      </div>
-      <div class="item-meta">NFL & fútbol · Proyectos personales</div>
-      <div class="item-desc">
-        <ul class="compact">
-          <li>Construcción de rankings personalizados de jugadores basados en volumen, eficiencia y contexto.</li>
-          <li>Uso de métricas avanzadas (targets, rutas, aDOT, EPA) para decisiones de alineación y trades.</li>
-        </ul>
-      </div>
-    </div>
-  </section>
+  </div>
 
-  <section class="section card">
-    <h2>Ingeniería de datos</h2>
+  <!-- TIMELINE STYLES -->
+  <style>
+    .timeline{
+      position: relative;
+      margin-top: 16px;
+      padding-left: 26px;
+    }
+    .timeline::before{
+      content:"";
+      position:absolute;
+      top:0;
+      left: 9px;
+      width:2px;
+      height:100%;
+      background: linear-gradient(
+        to bottom,
+        rgba(56,189,248,.6),
+        rgba(56,189,248,.15)
+      );
+    }
+    .timeline-item{
+      position: relative;
+      margin-bottom: 26px;
+    }
+    .timeline-dot{
+      position:absolute;
+      left: -2px;
+      top: 6px;
+      width: 14px;
+      height: 14px;
+      background: #020617;
+      border: 2px solid rgba(56,189,248,.8);
+      border-radius: 50%;
+      box-shadow: 0 0 10px rgba(56,189,248,.5);
+    }
+    .timeline-content{
+      padding-left: 18px;
+    }
+    .timeline-header{
+      display:flex;
+      justify-content: space-between;
+      gap: 12px;
+      font-size: .95rem;
+    }
+    .timeline-date{
+      font-size: .8rem;
+      color: var(--muted);
+      white-space: nowrap;
+    }
+    .timeline-meta{
+      font-size: .8rem;
+      color: var(--muted);
+      margin: 2px 0 6px;
+    }
+  </style>
 
-    <div class="item">
-      <div class="item-title">
-        <strong>ETL & Pipelines de datos</strong>
-        <span>2023 – actual</span>
-      </div>
-      <div class="item-meta">Curso Fuentes de Datos & proyectos personales</div>
-      <div class="item-desc">
-        <ul class="compact">
-          <li>Extracción de datos en JSON y CSV (StatsBomb, APIs deportivas) y carga a esquemas relacionales en PostgreSQL.</li>
-          <li>Uso de entornos virtuales, Docker y GitHub para reproducibilidad y despliegue sencillo.</li>
-          <li>Optimización de scripts de Python para reducir tiempos de ejecución en simulaciones de torneos.</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <footer>
-    Para detalles concretos de cada trabajo revisa la sección de Proyectos.
-  </footer>
-
-</div>
 </body>
 </html>
