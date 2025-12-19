@@ -1,225 +1,78 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>Sobre mí – Diego Muñoz</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <style>
-    :root {
-      --bg: #020617;
-      --card: #020617;
-      --accent: #38bdf8;
-      --accent-soft: rgba(56,189,248,0.12);
-      --text: #e5e7eb;
-      --muted: #9ca3af;
-    }
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
-      background: radial-gradient(circle at top, #0b1120 0, #020617 55%);
-      color: var(--text);
-    }
-    a { color: var(--accent); text-decoration: none; }
-    a:hover { text-decoration: underline; }
-    .page { max-width: 960px; margin: 0 auto; padding: 24px 16px 64px; }
-
-    /* NAV */
-    nav {
-      position: sticky; top: 0; z-index: 10;
-      background: rgba(15,23,42,0.95);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid rgba(148,163,184,0.25);
-      margin: 0 -16px 24px; padding: 10px 16px;
-    }
-    nav .nav-inner {
-      max-width: 960px; margin: 0 auto;
-      display: flex; align-items: center;
-      justify-content: space-between; gap: 12px;
-    }
-    .brand { font-weight: 600; font-size: 0.95rem; }
-    .nav-links { display: flex; flex-wrap: wrap; gap: 8px; font-size: 0.85rem; }
-    .nav-links a {
-      padding: 4px 10px; border-radius: 999px;
-      border: 1px solid transparent; color: var(--muted);
-    }
-    .nav-links a:hover {
-      border-color: rgba(148,163,184,0.7); color: var(--text);
-    }
-    .nav-links .active {
-      background: var(--accent-soft); color: var(--accent);
-      border-color: rgba(56,189,248,0.6);
-    }
-
-    .card {
-      background: var(--card);
-      border-radius: 18px;
-      padding: 20px 22px;
-      border: 1px solid rgba(148,163,184,0.25);
-      box-shadow: 0 18px 45px rgba(15,23,42,0.9);
-    }
-
-    .hero-banner {
-      position: relative;
-      margin-bottom: 22px;
-      overflow: hidden;
-      border-radius: 20px;
-      border: 1px solid rgba(56,189,248,0.35);
-      box-shadow: 0 25px 60px rgba(15,23,42,1);
-      min-height: 260px;   /* Aumenta el alto del banner */
-    }
-    .hero-banner img {
-      width: 100%; display: block;
-      filter: saturate(1.2) contrast(1.05) brightness(0.9);
-    }
-    .hero-banner .overlay {
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(to right, rgba(15,23,42,0.9), rgba(15,23,42,0.15));
-    }
-    .hero-banner .text {
-      position: absolute;
-      inset: 0;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      padding: 32px 18px 22px;
-    }
-    .hero-banner h1 {
-      margin: 0 0 6px;
-      font-size: clamp(1.8rem, 3vw, 2.3rem);
-    }
-    .hero-banner p {
-      margin: 0;
-      font-size: 0.95rem;
-      color: var(--muted);
-    }
-
-    header {
-      display: grid;
-      grid-template-columns: minmax(0, 2.1fr) minmax(0, 1.4fr);
-      gap: 18px; align-items: stretch; margin-bottom: 24px;
-    }
-    @media (max-width: 720px) { header { grid-template-columns: minmax(0,1fr); } }
-
-    .chips { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
-    .chip {
-      font-size: 0.75rem; border-radius: 999px;
-      padding: 4px 10px;
-      background: var(--accent-soft);
-      border: 1px solid rgba(148,163,184,0.4);
-      color: var(--accent);
-    }
-    .contact p { margin: 2px 0; font-size: 0.86rem; }
-
-    .profile-img {
-      width: 100%;
-      border-radius: 16px;
-      margin-bottom: 12px;
-      object-fit: cover;
-      max-height: 230px;
-      box-shadow: 0 12px 30px rgba(0,0,0,0.4);
-    }
-
-    h2 {
-      margin: 0 0 10px;
-      font-size: 0.95rem;
-      letter-spacing: .1em;
-      text-transform: uppercase;
-      color: var(--muted);
-    }
-    .section { margin-bottom: 18px; }
-    .section p {
-      font-size: 0.9rem;
-      line-height: 1.55;
-      color: #d1d5db;
-      margin: 0;
-    }
-
-    footer {
-      margin-top: 28px;
-      font-size: 0.75rem;
-      color: var(--muted);
-      text-align: center;
-    }
-  </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Diego Muñoz — Sports Data & Analytics</title>
+  <link rel="stylesheet" href="assets/style.css" />
 </head>
-<body>
-<div class="page">
 
+<body>
   <!-- NAV -->
-  <nav>
+  <div class="nav">
     <div class="nav-inner">
       <div class="brand">Diego Muñoz · Sports Data & Analytics</div>
-      <div class="nav-links">
-        <a href="index.html" class="active">Sobre mí</a>
+      <div class="links">
+        <a class="active" href="index.html">Inicio</a>
         <a href="experiencia.html">Experiencia</a>
         <a href="proyectos.html">Proyectos</a>
-        <a href="perfil.html">Perfil técnico</a>
+        <a href="perfil.html">Perfil</a>
       </div>
-    </div>
-  </nav>
-
-  <!-- HERO ESTADIO -->
-  <div class="hero-banner">
-    <img src="https://images.unsplash.com/photo-1518091043644-c1f1fb77a1c1?auto=format&fit=crop&w=1400&q=80" alt="Estadio de fútbol">
-    <div class="overlay"></div>
-    <div class="text">
-      <h1>Analítica para entender el juego</h1>
-      <p>Modelos, datos y simulaciones para explicar lo que pasa en la cancha.</p>
     </div>
   </div>
 
-  <!-- HEADER -->
-  <header>
-    <div class="card">
-      <h2>Perfil</h2>
-      <p>
-        Soy estudiante de Ciencia de Datos en el ITAM. Me enfoco en analítica deportiva:
-        desde construir pipelines con datos de partidos hasta simular torneos completos como
-        la UEFA Champions League usando Elo y técnicas de Monte Carlo.
-      </p>
-      <div class="chips">
-        <span class="chip">Fútbol & NFL</span>
-        <span class="chip">StatsBomb</span>
-        <span class="chip">Simulación de torneos</span>
-        <span class="chip">ML & visualización</span>
+  <div class="container">
+    <!-- HERO -->
+    <section class="hero">
+      <img
+        src="https://images.unsplash.com/photo-1518091043644-c1f1fb77a1c1?auto=format&fit=crop&w=1600&q=80"
+        alt="Estadio de fútbol"
+      />
+      <div class="hero-content">
+        <h1 class="hero-title">Analítica para entender el juego</h1>
+        <p class="hero-sub">
+          Modelos, datos y visualizaciones aplicadas al fútbol para convertir eventos en decisiones.
+        </p>
+        <div class="chips">
+          <span class="chip">Elo & simulación</span>
+          <span class="chip">StatsBomb</span>
+          <span class="chip">ETL & SQL</span>
+          <span class="chip">ML & visualización</span>
+        </div>
       </div>
-    </div>
+    </section>
 
-    <div class="card">
-      <img class="profile-img"
-           src="https://images.unsplash.com/photo-1522778119026-d647f0596c20?auto=format&fit=crop&w=800&q=80"
-           alt="Analista deportivo revisando datos">
-      <h2>Contacto</h2>
-      <div class="contact">
+    <!-- GRID -->
+    <div class="grid" style="margin-top:18px;">
+      <section class="card pad">
+        <h2>Perfil</h2>
+        <p>
+          Soy estudiante de Ciencia de Datos en el ITAM. Me enfoco en analítica deportiva: desde
+          construir pipelines con datos de partidos hasta simular torneos completos (UEFA Champions League)
+          usando Elo y Monte Carlo.
+        </p>
+        <ul>
+          <li>Diseño de pipelines reproducibles (Python, SQL, Git, Docker)</li>
+          <li>Modelado y simulación de competiciones (Elo, Monte Carlo)</li>
+          <li>Visualización táctica y métricas (xG, presión, zonas)</li>
+        </ul>
+      </section>
+
+      <aside class="card pad kv">
+        <h2>Contacto</h2>
         <p>📍 Ciudad de México, México</p>
-        <p>✉️ <a href="mailto:dmuozgon@itam.mx">dmuozgon@itam.mx</a></p>
-        <p>💼 <a href="https://www.linkedin.com/in/diego-roberto-mu%C3%B1oz-gonzalez-a03315395/" target="_blank">DM</a></p>
-        <p>🐙 <a href="https://github.com/MrFett22" target="_blank">github.com/MrFett22</a></p>
-      </div>
+        <p>✉️ <a href="mailto:dmouzgon@itam.mx">dmouzgon@itam.mx</a></p>
+        <p>💼 <a href="#" target="_blank" rel="noopener">LinkedIn (pon tu link)</a></p>
+        <p>🐙 <a href="https://github.com/MrFett22" target="_blank" rel="noopener">github.com/MrFett22</a></p>
+
+        <div style="margin-top:14px;">
+          <h2>Disponible para</h2>
+          <p class="small">Proyectos de sports analytics, data pipelines, investigación aplicada.</p>
+        </div>
+      </aside>
     </div>
-  </header>
 
-  <!-- SOBRE MÍ -->
-  <section class="section card">
-    <h2>Sobre mí</h2>
-    <p>
-      Me interesa entender por qué unos equipos dominan y otros no: qué tan justa es una
-      competición, qué tan eficientes son los tiros de esquina o cómo cambia el riesgo al
-      modificar el formato de un torneo. Combino estadística, modelos de machine learning
-      y visualización para responder ese tipo de preguntas.
-      <br><br>
-      Disfruto trabajar con datos de principio a fin: extracción, limpieza, modelos y
-      comunicación de resultados con gráficas claras y reproducibles.
-    </p>
-  </section>
-
-  <footer>
-    Portafolio deportivo en construcción · GitHub Pages – 2025.
-  </footer>
-
-</div>
+    <div class="footer">Hecho con GitHub Pages · 2025</div>
+  </div>
 </body>
 </html>
